@@ -1,0 +1,314 @@
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.container {
+  flex: 1;
+}
+
+header {
+  padding: 20px 30px;
+  background-color: rgb(37, 37, 37);
+}
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .container .logo {
+  font: bold 1.2em "Roboto", sans-serif;
+  color: #757575;
+  cursor: pointer;
+}
+header .container .bars {
+  display: flex;
+  font: bold 1.2em "Roboto", sans-serif;
+  color: #757575;
+}
+header .container .menu {
+  display: none;
+}
+header nav {
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgb(37, 37, 37);
+}
+header nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 20px 0;
+  gap: 20px;
+}
+header nav ul li a {
+  color: #757575;
+  font: normal 1em "Roboto", sans-serif;
+}
+header nav.active {
+  display: initial;
+  animation: slideDown 0.4s ease-in-out forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.home-container {
+  position: relative;
+  top: 100px;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home-container .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 20px;
+}
+.home-container .container .image {
+  max-width: 400px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 15px solid #757575;
+  box-shadow: 5px 7px 25px rgba(0, 0, 0, 0.5);
+}
+.home-container .container .image img {
+  width: 100%;
+  transition: 0.5s;
+  scale: 1.1;
+}
+.home-container .container .text-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 20px 0;
+  gap: 10px;
+}
+.home-container .container .text-content span {
+  color: #757575;
+  font: normal 1rem "Roboto", sans-serif;
+}
+.home-container .container .text-content span #changedText {
+  color: rgb(186, 186, 186);
+}
+.home-container .container .text-content h3 {
+  color: rgb(186, 186, 186);
+  font: 800 1.5rem "Roboto", sans-serif;
+  text-transform: uppercase;
+}
+.home-container .container .text-content p {
+  color: #757575;
+  font: normal 0.9rem "Roboto", sans-serif;
+}
+.home-container .container .text-content .buttons .btn {
+  background-color: black;
+  color: #757575;
+  padding: 15px 25px;
+  border-radius: 25px;
+  border: 2px solid transparent;
+  margin: 10px 0;
+  font: 600 0.8rem "Roboto", sans-serif;
+  transition: 200ms ease-in-out;
+  cursor: pointer;
+}
+
+.about-container {
+  position: relative;
+  top: 120px;
+  padding: 20px;
+  margin: 20px 0;
+}
+.about-container .top-text span {
+  color: #757575;
+  text-transform: uppercase;
+  font: normal 0.75em "Roboto", sans-serif;
+}
+.about-container .top-text h3 {
+  color: #757575;
+  font: bold 1.5em "Roboto", sans-serif;
+  text-transform: uppercase;
+}
+.about-container .text-content {
+  margin: 20px 0;
+}
+.about-container .text-content span {
+  display: flex;
+  color: rgb(176, 176, 176);
+  font: normal 1.1em/1.5em "Roboto", sans-serif;
+  text-align: center;
+}
+.about-container .tab-titles {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 20px 0;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.about-container .tab-titles .tab-links {
+  cursor: pointer;
+  color: #757575;
+  font: normal 1.1em "Roboto", sans-serif;
+  padding: 10px 15px;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.about-container .tab-titles .tab-links.active-link {
+  background-color: #757575;
+  color: white;
+  border: 2px solid #757575;
+}
+.about-container .tab-contents {
+  display: none;
+  margin: 20px 0;
+}
+.about-container .tab-contents.active-tab {
+  display: block;
+}
+.about-container .tab-contents ul {
+  color: #757575;
+}
+.about-container .tab-contents ul li {
+  font: normal 1rem "Roboto", sans-serif;
+  margin-bottom: 15px;
+}
+.about-container .tab-contents ul li span {
+  font-weight: bold;
+}
+
+.projects-container {
+  position: relative;
+  top: 120px;
+  padding: 20px;
+  margin: 20px 0;
+}
+.projects-container .top-text span {
+  color: #757575;
+  text-transform: uppercase;
+  font: normal 0.75em "Roboto", sans-serif;
+}
+.projects-container .top-text h3 {
+  color: #757575;
+  font: bold 1.5em "Roboto", sans-serif;
+  text-transform: uppercase;
+}
+.projects-container .project-content {
+  margin: 20px 0;
+  text-align: center;
+}
+.projects-container .project-content a {
+  font: bold 1.2rem "Roboto", sans-serif;
+  color: #757575;
+  transition: 200ms ease-in-out;
+}
+.projects-container .project-content a:hover {
+  text-decoration: underline;
+}
+.projects-container .project-content .first, .projects-container .project-content .second {
+  border: 3px solid #757575;
+  padding: 25px;
+  margin: 20px 0;
+  text-align: center;
+  border-radius: 20px;
+}
+.projects-container .project-content .first button, .projects-container .project-content .second button {
+  cursor: pointer;
+  background-color: #252525;
+  color: #757575;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: 2px solid transparent;
+  margin: 5px;
+  font: 700 0.9rem "Roboto", sans-serif;
+}
+.projects-container .project-content .first img, .projects-container .project-content .second img {
+  width: 100%;
+  filter: brightness(80%);
+  border-bottom: 3px solid #757575;
+  padding: 5px 5px 10px 5px;
+  border-radius: 20px;
+}
+
+.contact-container {
+  position: relative;
+  top: 100px;
+  padding: 20px;
+  margin: 20px 0;
+}
+.contact-container .top-text span {
+  color: #757575;
+  text-transform: uppercase;
+  font: normal 0.75em "Roboto", sans-serif;
+}
+.contact-container .top-text h3 {
+  color: #757575;
+  font: bold 1.5em "Roboto", sans-serif;
+  text-transform: uppercase;
+}
+.contact-container .content {
+  margin: 40px 0;
+}
+.contact-container .content .iframe {
+  width: 100%;
+}
+.contact-container .content form .text h3 {
+  font: 900 1.5rem "Roboto", sans-serif;
+  color: #757575;
+  margin: 20px 0;
+}
+.contact-container .content form .text span {
+  display: flex;
+  font: normal 1rem "Roboto", sans-serif;
+  color: #919191;
+  margin: 10px 0;
+}
+.contact-container .content form .input-box input, .contact-container .content form .input-box textarea {
+  padding: 10px 20px;
+  border-radius: 10px;
+  width: 100%;
+  margin: 10px 0;
+  resize: none;
+  border: 1px solid transparent;
+  outline: none;
+  background-color: #d8d8d8;
+  color: black;
+}
+.contact-container .content form .input-box textarea {
+  height: 200px;
+}
+.contact-container .content form input[type=submit] {
+  background-color: black;
+  border-radius: 10px;
+  color: white;
+  border: 1px solid transparent;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 200ms ease-in-out;
+}
+.contact-container .content form input[type=submit]:active {
+  scale: 0.9;
+}
+
+/*# sourceMappingURL=style.css.map */

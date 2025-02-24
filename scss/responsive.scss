@@ -1,0 +1,207 @@
+$primary-font: 'Roboto', sans-serif;
+$primary-color: #757575;
+
+@mixin flexContainer($justify-content){
+    display: flex;
+    align-items: center;
+    justify-content: $justify-content;
+}
+
+@media screen and (min-width: 768px) {
+    // Standart Container width
+    .container {
+        max-width: 1240px;
+        margin: auto;
+    }
+
+    // Header CSS
+    header {
+        top: 150px!important;
+        .container {
+            .logo {
+                font-size: 1.5em!important;
+            }
+            .bars{
+                display: none!important;
+            }
+            .menu {
+                display: initial!important;
+
+                ul {
+                    @include flexContainer(center);
+                    gap: 50px;
+
+                    li {
+                        a {
+                            position: relative;
+                            color: $primary-color;
+                            font: normal 1.2em $primary-font;
+                            transition: 200ms ease-in-out;
+
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                left: 0;
+                                bottom: -5px;
+                                width: 0;
+                                height: 2px;
+                                background-color: $primary-color;
+                                transition: width 0.3s ease-in-out;
+                            }
+                        
+                            &:hover{
+                                color: rgb(160, 160, 160);
+                                &::after {
+                                    width: 100%;
+                                    background-color: rgba(160, 160, 160);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .mobileMenu {
+            display: none!important;
+
+            &.active {
+                display: none!important;
+            }
+        }
+    
+    }
+
+    // Home CSS
+    .home-container {
+        top: 150px!important;
+        .container {
+            @include flexContainer(center);
+            flex-direction: row!important;
+            gap: 100px;
+
+            .image {
+
+                img {
+
+                    &:hover {
+                        scale: 1.15;
+                    }
+                }
+            }
+
+            .text-content {
+
+                span {
+                    font-size: 1.2rem!important;
+                }
+
+                h3 {
+                    font-size: 2rem!important;
+                }
+
+                p {
+                    font-size: 1.1rem!important;
+                }
+
+                .buttons {
+
+                    .btn {
+                        font: 600 1.1rem $primary-font!important;
+
+                        &:hover {
+                            background-color: rgba(60, 60, 60, 0.6);
+                            border: 2px solid black;
+                            color: gray;
+                        }
+                    }
+                }
+            }   
+        }
+    }
+
+    // About
+    .about-container {
+    height: 100vh!important;
+    top: 300px!important;
+        .text-content {
+            span {
+                text-align: initial!important;
+            }
+        }
+        .tab-titles {
+            justify-content: initial!important;
+            flex-direction: row!important;
+        }
+    }
+
+    // Projects
+    .projects-container {
+        height: 100vh!important;
+        top: 300px!important;
+    }
+
+    // Projects 
+    .projects-container {
+        position: relative;
+        top: 120px;
+        padding: 20px;
+        margin: 20px 0;
+        .project-content {
+            margin: 20px 0;
+            text-align: center;
+            @include flexContainer(center);
+            flex-direction: column;
+
+            .projects {
+                @include flexContainer(center);
+                flex-direction: row!important;
+                gap: 50px;
+            }
+            .first, .second {
+
+                button {
+                    cursor: pointer;
+                    background-color: #252525;
+                    color: $primary-color;
+                    padding: 15px 25px!important;
+                    border-radius: 25px;
+                    border: 2px solid transparent;
+                    margin: 10px;
+                    font: 700 .9rem $primary-font;
+                    transition: 200ms ease-in-out;
+                    &:hover {
+                        background-color: transparent;
+                        border: 2px solid #252525;
+                    }
+                }
+                img {
+                    width: 100%;
+                    filter: brightness(80%);
+                    transition: 200ms ease-in-out;
+
+                    &:hover{
+                        filter: brightness(100%)
+                    }
+                }
+            }
+        }
+    }
+
+    // Contact
+    .contact-container {
+        position: relative;
+        top: 220px!important;
+
+        .content {
+            @include flexContainer(center);
+            gap: 50px;
+            .iframe {
+                width: 40%!important;
+            }
+            form {
+                width: 60%!important;
+            }
+        }
+
+    }
+}

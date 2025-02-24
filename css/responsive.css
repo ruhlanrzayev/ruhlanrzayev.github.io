@@ -1,0 +1,160 @@
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 1240px;
+    margin: auto;
+  }
+  header {
+    top: 150px !important;
+  }
+  header .container .logo {
+    font-size: 1.5em !important;
+  }
+  header .container .bars {
+    display: none !important;
+  }
+  header .container .menu {
+    display: initial !important;
+  }
+  header .container .menu ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+  }
+  header .container .menu ul li a {
+    position: relative;
+    color: #757575;
+    font: normal 1.2em "Roboto", sans-serif;
+    transition: 200ms ease-in-out;
+  }
+  header .container .menu ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: #757575;
+    transition: width 0.3s ease-in-out;
+  }
+  header .container .menu ul li a:hover {
+    color: rgb(160, 160, 160);
+  }
+  header .container .menu ul li a:hover::after {
+    width: 100%;
+    background-color: rgb(160, 160, 160);
+  }
+  header .mobileMenu {
+    display: none !important;
+  }
+  header .mobileMenu.active {
+    display: none !important;
+  }
+  .home-container {
+    top: 150px !important;
+  }
+  .home-container .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row !important;
+    gap: 100px;
+  }
+  .home-container .container .image img:hover {
+    scale: 1.15;
+  }
+  .home-container .container .text-content span {
+    font-size: 1.2rem !important;
+  }
+  .home-container .container .text-content h3 {
+    font-size: 2rem !important;
+  }
+  .home-container .container .text-content p {
+    font-size: 1.1rem !important;
+  }
+  .home-container .container .text-content .buttons .btn {
+    font: 600 1.1rem "Roboto", sans-serif !important;
+  }
+  .home-container .container .text-content .buttons .btn:hover {
+    background-color: rgba(60, 60, 60, 0.6);
+    border: 2px solid black;
+    color: gray;
+  }
+  .about-container {
+    height: 100vh !important;
+    top: 300px !important;
+  }
+  .about-container .text-content span {
+    text-align: initial !important;
+  }
+  .about-container .tab-titles {
+    justify-content: initial !important;
+    flex-direction: row !important;
+  }
+  .projects-container {
+    height: 100vh !important;
+    top: 300px !important;
+  }
+  .projects-container {
+    position: relative;
+    top: 120px;
+    padding: 20px;
+    margin: 20px 0;
+  }
+  .projects-container .project-content {
+    margin: 20px 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .projects-container .project-content .projects {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row !important;
+    gap: 50px;
+  }
+  .projects-container .project-content .first button, .projects-container .project-content .second button {
+    cursor: pointer;
+    background-color: #252525;
+    color: #757575;
+    padding: 15px 25px !important;
+    border-radius: 25px;
+    border: 2px solid transparent;
+    margin: 10px;
+    font: 700 0.9rem "Roboto", sans-serif;
+    transition: 200ms ease-in-out;
+  }
+  .projects-container .project-content .first button:hover, .projects-container .project-content .second button:hover {
+    background-color: transparent;
+    border: 2px solid #252525;
+  }
+  .projects-container .project-content .first img, .projects-container .project-content .second img {
+    width: 100%;
+    filter: brightness(80%);
+    transition: 200ms ease-in-out;
+  }
+  .projects-container .project-content .first img:hover, .projects-container .project-content .second img:hover {
+    filter: brightness(100%);
+  }
+  .contact-container {
+    position: relative;
+    top: 220px !important;
+  }
+  .contact-container .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+  }
+  .contact-container .content .iframe {
+    width: 40% !important;
+  }
+  .contact-container .content form {
+    width: 60% !important;
+  }
+}
+
+/*# sourceMappingURL=responsive.css.map */

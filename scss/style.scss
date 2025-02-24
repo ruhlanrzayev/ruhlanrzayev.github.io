@@ -1,0 +1,378 @@
+$primary-font: 'Roboto', sans-serif;
+$primary-color: #757575;
+
+@mixin flexContainer($justify-content){
+    display: flex;
+    align-items: center;
+    justify-content: $justify-content;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.container {
+    flex: 1; 
+}   
+// Header CSS
+header {
+    padding: 20px 30px;
+    background-color: rgb(37, 37, 37);
+    .container {
+        @include flexContainer(space-between);
+
+        .logo{
+            font: bold 1.2em $primary-font;
+            color: $primary-color;
+            cursor:pointer;
+        }
+
+        .bars {
+            display: flex;
+            font: bold 1.2em $primary-font;
+            color: $primary-color;
+        }
+        .menu {
+            display: none;
+        }
+    }
+    nav {
+        display: none;
+        position: absolute;
+        top: 50px; 
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background-color: rgb(37, 37, 37);
+        ul {
+            @include flexContainer(center);
+            flex-direction: column;
+            margin: 20px 0;
+            gap: 20px;
+            
+            li {
+                a {
+                    color: $primary-color;
+                    font: normal 1em $primary-font;
+                }
+
+            }
+        }
+        &.active {
+            display: initial;
+            animation: slideDown 0.4s ease-in-out forwards;
+        }
+    
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// Home
+.home-container {
+    position: relative;
+    top: 100px;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    @include flexContainer(center);
+    .container {
+        @include flexContainer(center);
+        flex-direction: column;
+        padding: 0 20px;
+
+        .image {
+            max-width: 400px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 15px solid $primary-color;
+            box-shadow: 5px 7px 25px rgba(0,0,0,0.5);
+
+            img {
+                width: 100%;
+                transition: 0.5s;
+                scale: 1.1;
+                // &:hover {
+                //     scale: 1.2;
+                // }
+            }
+        }
+        .text-content {
+            @include flexContainer(center);
+            text-align: center;
+            flex-direction: column;
+            padding: 20px 0;
+            gap: 10px;
+
+            span {
+                color: $primary-color;
+                font: normal 1rem $primary-font;
+
+                #changedText {
+                    color: rgb(186, 186, 186);
+                }
+            }
+
+            h3 {
+                color: rgb(186, 186, 186);
+                font: 800 1.5rem $primary-font;
+                text-transform: uppercase;
+            }
+
+            p {
+                color: $primary-color;
+                font: normal .9rem $primary-font;
+            }
+            .buttons {
+                
+                .btn {
+                    background-color: black;
+                    color: $primary-color;
+                    padding: 15px 25px;
+                    border-radius: 25px;
+                    border: 2px solid transparent;
+                    margin: 10px 0;
+                    font: 600 .8rem $primary-font;
+                    transition: 200ms ease-in-out;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+// About
+.about-container {
+    position: relative;
+    top: 120px;
+    padding: 20px;
+    margin: 20px 0;
+    .top-text {
+
+        span {
+            color: $primary-color;
+            text-transform: uppercase;
+            font: normal .75em $primary-font;
+        }
+
+        h3 {
+            color: $primary-color;
+            font: bold 1.5em $primary-font;
+            text-transform: uppercase;
+        }
+    }
+
+    .text-content {
+        margin: 20px 0;
+
+        span {
+            display: flex;
+            color: rgb(176, 176, 176);
+            font: normal 1.1em/1.5em $primary-font;
+            text-align: center;
+        }
+    }
+
+    .tab-titles {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin: 20px 0;
+        gap: 15px;
+        flex-wrap: wrap;
+
+        .tab-links {
+            cursor: pointer;
+            color: $primary-color;
+            font: normal 1.1em $primary-font;
+            padding: 10px 15px;
+            border: 2px solid transparent;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            
+            &.active-link {
+                background-color: $primary-color;
+                color: white;
+                border: 2px solid $primary-color;
+            }
+        }
+    }
+    
+    .tab-contents {
+        display: none;
+        margin: 20px 0;
+
+        &.active-tab {
+            display: block;
+        }
+
+        ul {
+            color: $primary-color;
+
+            li {
+                font: normal 1rem $primary-font;
+                margin-bottom: 15px;
+
+                span {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+// Projects 
+.projects-container {
+    position: relative;
+    top: 120px;
+    padding: 20px;
+    margin: 20px 0;
+    .top-text {
+
+        span {
+            color: $primary-color;
+            text-transform: uppercase;
+            font: normal .75em $primary-font;
+        }
+
+        h3 {
+            color: $primary-color;
+            font: bold 1.5em $primary-font;
+            text-transform: uppercase;
+        }
+    }
+
+    .project-content {
+        margin: 20px 0;
+        text-align: center;
+
+        a {
+            font: bold 1.2rem $primary-font;
+            color: $primary-color;
+            transition: 200ms ease-in-out;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        .first, .second {
+            border: 3px solid $primary-color;
+            padding: 25px;
+            margin: 20px 0;
+            text-align: center;
+            border-radius: 20px;
+
+            button {
+                cursor: pointer;
+                background-color: #252525;
+                color: $primary-color;
+                padding: 10px 20px;
+                border-radius: 25px;
+                border: 2px solid transparent;
+                margin: 5px;
+                font: 700 .9rem $primary-font;
+            }
+            img {
+                width: 100%;
+                filter: brightness(80%);
+                border-bottom: 3px solid $primary-color;
+                padding: 5px 5px 10px 5px;
+                border-radius: 20px;
+            }
+        }
+    }
+}
+
+// Contact
+.contact-container {
+    position: relative;
+    top: 100px;
+    padding: 20px;
+    margin: 20px 0;
+
+    .top-text {
+
+        span {
+            color: $primary-color;
+            text-transform: uppercase;
+            font: normal .75em $primary-font;
+        }
+
+        h3 {
+            color: $primary-color;
+            font: bold 1.5em $primary-font;
+            text-transform: uppercase;
+        }
+    }
+
+    .content {
+        margin: 40px 0;
+
+        .iframe {
+            width: 100%;
+        }
+
+        form {
+
+            .text {
+                h3 {
+                    font: 900 1.5rem $primary-font;
+                    color: $primary-color;
+                    margin: 20px 0;
+                }
+
+                span {
+                    display: flex;
+                    font: normal 1rem $primary-font;
+                    color: #919191;
+                    margin: 10px 0;
+                }
+            }
+
+            .input-box {
+                
+                input,textarea {
+                    padding: 10px 20px;
+                    border-radius: 10px;
+                    width: 100%;
+                    margin: 10px 0;
+                    resize: none;
+                    border: 1px solid transparent;
+                    outline: none;
+                    background-color: #d8d8d8;
+                    color: black;
+                }
+
+                textarea {
+                    height: 200px;
+                }
+
+            }
+            input[type="submit"] {
+                background-color: black;
+                border-radius: 10px;
+                color: white; 
+                border: 1px solid transparent;
+                padding: 10px 20px;
+                font-size: 16px; 
+                cursor: pointer; 
+                transition: 200ms ease-in-out;
+
+                &:active {
+                    scale: .9;
+                }
+            }
+        }
+    }
+}
